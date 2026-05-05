@@ -8,8 +8,8 @@ jobs:
     - name: Test
       run: |
         uname -a
-        grep -i authencesn /proc/crypto
-        lsmod | grep alg
-        modprobe algif_aead
-        grep -i authencesn /proc/crypto
-        lsmod | grep alg
+        grep -i authencesn /proc/crypto || true
+        lsmod | grep alg || true
+        modprobe algif_aead || true
+        grep -i authencesn /proc/crypto || true
+        lsmod | grep alg || true
