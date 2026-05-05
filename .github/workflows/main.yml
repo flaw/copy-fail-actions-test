@@ -1,0 +1,15 @@
+name: Build
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test
+      run: |
+        uname -a
+        grep -i authencesn /proc/crypto
+        lsmod | grep alg
+        modprobe algif_aead
+        grep -i authencesn /proc/crypto
+        lsmod | grep alg
